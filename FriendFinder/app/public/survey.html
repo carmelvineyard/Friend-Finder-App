@@ -26,9 +26,20 @@
       </div>
       <br>
       <form>
+
         <div class="form-group">
-          <label for="sel1">I greatly enjoy reading. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="name">Name (Required)</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Link to Photo/ Image (Required, hopefully somewhat accurate)</label>
+          <input type="text" class="form-control" id="photo">
+        </div>
+
+        <div class="form-group">
+          <label for="q1">I greatly enjoy reading. (select one):</label>
+          <select class="form-control" id="q1">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -36,8 +47,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">I enjoy discussing the things I enjoy with others. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q2">I enjoy discussing the things I enjoy with others. (select one):</label>
+          <select class="form-control" id="q2">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -45,8 +56,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">The Earth is round. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q3">The Earth is round. (select one):</label>
+          <select class="form-control" id="q3">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -54,8 +65,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">If I could put my brain into a robot body and live indefinitely, I would. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q4">If I could put my brain into a robot body and live indefinitely, I would. (select one):</label>
+          <select class="form-control" id="q4">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -63,8 +74,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">I enjoy being in the outdoors. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q5">I enjoy being in the outdoors. (select one):</label>
+          <select class="form-control" id="q5">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -72,8 +83,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">I enjoy visiting new places. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q6">I enjoy visiting new places. (select one):</label>
+          <select class="form-control" id="q6">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -81,8 +92,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">The best weapon for a zombie apocalypse is a shotgun. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q7">The best weapon for a zombie apocalypse is a shotgun. (select one):</label>
+          <select class="form-control" id="q7">
             <option>1 I strongly disagree, and probably have a better weapon to recommend.</option>
             <option>2</option>
             <option>3 This is a stupid question. (Or, I wouldn't be fighting zombies.)</option>
@@ -90,8 +101,8 @@
             <option>5 I strongly agree and enjoy watching them get blown to smithereens.</option>
           </select>
           <br>
-          <label for="sel1">I have a reasoning behind my previous answer and am willing to discuss it. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q8">I have a reasoning behind my previous answer and am willing to discuss it. (select one):</label>
+          <select class="form-control" id="q8">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -99,8 +110,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">I enjoy meeting new people. (select one):</label>
-          <select class="form-control" id="sel1">
+          <label for="q9">I enjoy meeting new people. (select one):</label>
+          <select class="form-control" id="q9">
             <option>1 (Strongly Disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -108,8 +119,8 @@
             <option>5 (Strongly Agree)</option>
           </select>
           <br>
-          <label for="sel1">Sweet or salty snacks?:</label>
-          <select class="form-control" id="sel1">
+          <label for="q10">Sweet or salty snacks?:</label>
+          <select class="form-control" id="q10">
             <option>1 (Salty)</option>
             <option>2</option>
             <option>3</option>
@@ -130,56 +141,108 @@
 
   </div>  <!--end container-->
 
+  <!-- Modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!--modal content-->
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div><!--end modal-header-->
+
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="" alt="">
+        </div><!--end modal-body-->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dropdown" data-dismiss="modal">Close</button>          
+        </div><!--end modal-footer-->
+        
+      </div><!--end modal-content-->
+      
+    </div><!--end modal-dialog-->
+    
+  </div> <!--end resultsModal-->
+
 </body>
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<!-- Javascript code to handle data capture and movement -->
 <script type="text/javascript">
 
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  //CSS for "chosen" classes:
 
-    $(".submit").on("click", function(event) {
-      event.preventDefault();
+  var config = {
+    '.chosen-select': {},
+    '.chosen-select-deselect': {
+      allow_single_deselect: true
+    },
+    '.chosen-select-no-single': {
+      disable_search_threshold: 10
+    },
+    '.chosen-select-no-results': {
+      no_results_text: 'Oops, nothing found!'
+    },
+    '.chosen-select-width': {
+      width: "95%"
+    }
+  }
 
-      // Here we grab the form elements
-      var newReservation = {
-        customerName: $("#reserve-name").val().trim(),
-        phoneNumber: $("#reserve-phone").val().trim(),
-        customerEmail: $("#reserve-email").val().trim(),
-        customerID: $("#reserve-unique-id").val().trim()
-      };
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
 
-      console.log(newReservation);
+  //Capture form inputs
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
 
-      $.post("/api/tables", newReservation,
-        function(data) {
+    $(".submit").on("click", function() {
+      //event.preventDefault();
+      //Form validation
+      function validateForm() {
+        var isValid = true;
+        $('.form-control').each(function() {
+          if ($(this).val() === '')
+            isValid = false;
+        }); // end .form-control.each
+        $('.chosen-select').each(function() {
+          if ($(this).val() === "")
+            isValid = false
+        }) // end .chosen-select.each
 
-          // If a table is available... tell user they are booked.
-          if (data) {
-            alert("Yay! You are officially booked!");
-          }
+        return isValid;
+      } // end function validateForm
 
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
+      // If all required fields are filled, 
+      if (validateForm() == true) {
 
-          // Clear the form when submitting
-          $("#reserve-name").val("");
-          $("#reserve-phone").val("");
-          $("#reserve-email").val("");
-          $("#reserve-unique-id").val("");
+        //Here we grab the form elements
+        var userData = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val(), ]
+        }
 
-        });
+        //Grab the URL of the website
+        var currentURL = window.location.origin;
 
-    });
+        //Make a POST request to the friends API
+
+        $.post(currentURL + "/api/friends", userData, function(data) {
+          //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#matchName").text(data.name);
+          $("#matchImg").attr("src", data.photo);
+          // Show the modal with the best match
+          $("#resultsModal").modal('toggle'); 
+        }); // $.post end
+
+      } else {
+        alert("Please fill out all fields before submitting!");
+      } //end if validateForm == true
+      return false;
+    }); //end .submit.on"click"
 
 </script>

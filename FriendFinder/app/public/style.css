@@ -40,6 +40,11 @@
     }
 
 
+    hr {
+        border-color: inherit;
+        margin: 1em 0;
+    }
+
    /* dropdown button */
     .btn-dropdown {
         background-color: #fffdd0;
