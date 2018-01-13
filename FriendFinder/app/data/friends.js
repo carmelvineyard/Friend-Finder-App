@@ -4,7 +4,7 @@
 // But it could be an empty array as well.
 // ===============================================================================
 
-var responseArray = [];
+var friendArray = [];
 
 // Note how we export the array. This makes it accessible to other files using require.
-module.exports = responseArray;
+module.exports = friendArray;

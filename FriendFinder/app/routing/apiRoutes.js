@@ -2,7 +2,7 @@
 // LOAD DATA
 // ===============================================================================
 
-var responseData = require("../data/friends");
+var friends = require("../data/friends");
 
 // ===============================================================================
 // ROUTING
@@ -12,7 +12,7 @@ module.exports = function(app) {
 
   // API GET Request
   app.get("/api/friends", function(req, res) {
-    res.json(responseData);
+    res.json(friendArray);
   });
 
   // API POST Request
@@ -37,22 +37,22 @@ module.exports = function(app) {
 	var totalDifference = 0;
 
 	//First Loop through the possibilities in the database
-	for (var i = 0; i < friends.length; i++) {
-		console.log(friends[i].name);
+	for (var i = 0; i < friendArray.length; i++) {
+		console.log(friendArray[i].name);
 		totalDifference = 0;
 
 		//Second Loop through the scores of each possibility
-		for (var i = 0; i < friends[i].scores[j]; j++) {
+		for (var i = 0; i < friendArray[i].scores[j]; j++) {
 		
 			//Calculate the difference between the scores (using absolute values) and sum them into the totalDifference
-			totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+			totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendArray[i].scores[j]));
 
 			//If the sum of differences is less than the differences of the current bestMatch
 			if (totalDifference <= bestMatch.friendDifference){
 
 				//Reset the bestMatch to be the new friend.
-				bestMatch.name = friends[i].name;
-				bestMatch.photo = friends[i].photo;
+				bestMatch.name = friendArray[i].name;
+				bestMatch.photo = friendArray[i].photo;
 				bestMatch.friendDifference = totalDifference;
 			}
 
@@ -64,11 +64,11 @@ module.exports = function(app) {
 
    //Finally, save the most recent responses to the array.
    //If this happens earlier, the user would always be the bestMatch. 
-    responseData.push(userData); 
+    friends.push(userData); 
 
    //Return a JSON with the bestMatch. This will be used by survey.html for the modal.
    	res.json(bestMatch); 
 
   }); //end app.post
 
-  
+ }; 
