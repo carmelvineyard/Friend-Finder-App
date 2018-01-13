@@ -1,0 +1,93 @@
+    body {
+      background-color: #005f60;
+      color: #e2eded;
+    }
+
+    .jumbotron {
+      background-color: #fffdd0;
+      color: #60005f;
+    }
+
+    a {
+      color: #e2eded;
+      text-decoration: none;
+    }
+
+    a:active {
+      color: #e7e7e7;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: #e3ebeb;
+    }
+
+    .form-control {
+      background-color: #fffdd0;
+      color: #60005f;
+      border-color: #b5860a;
+    }
+
+    .form-control:focus {
+        border-color: #480047;  
+        box-shadow: none; 
+        -webkit-box-shadow: none;
+    }
+
+
+    select option:hover {
+      background-color: #005f60;
+      color: #e2eded;
+    }
+
+/* Someday I will conquer changing the color of the <hr>, but it is not this day.
+    hr {
+        border-color: #005f60;
+        margin: 1em 0;
+    }
+*/
+
+   /* dropdown button */
+    .btn-dropdown {
+        background-color: #fffdd0;
+        color: #60005f;
+        border-color: #480047;
+        border-radius: 25px;
+    }
+    .btn-dropdown:hover,
+    .btn-dropdown:focus,
+    .btn-dropdown:active    {
+        background-color: #60005f;
+        color: #fffdd0;
+        border-color: #480047;
+    }
+
+     /* home button */
+    .btn-home {
+        background-color: #e2eded;
+        color: #60005f;
+        border-color: #9ac0c0;
+        border-radius: 25px;
+    }
+    .btn-home:hover,
+    .btn-home:focus,
+    .btn-home:active    {
+        background-color: #c5dbdb;
+        color: #60005f;
+        border-color: #9ac0c0;
+    }
+
+         /* crouton button */
+    .btn-crouton {
+        background-color: #fffdd0;
+        color: #b5860a;
+        border-color: #b5860a;
+        border-radius: 25px;
+    }
+    .btn-crouton:hover,
+    .btn-crouton:focus,
+    .btn-crouton:active    {
+        background-color: #f1b30f;
+        color: #fffdd0;
+        border-color: #b5860a;
+    }

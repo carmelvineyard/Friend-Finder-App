@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Take the Survey!</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="glyphicon glyphicon-search"></span> Find a Friend!</h1>
+      <hr>
+      <h2 class="text-center">Take the survey and see who thinks like you!</h2>
+      <br>
+
+      <div class="text-center">
+        <a href="/"><button type="button" class="btn btn-lg btn-crouton"><span class="glyphicon glyphicon-home"></span> Back to home</button></a>
+      </div>
+      <br>
+      <form>
+
+        <h2>About You</h2>
+        <br>
+        <div class="form-group">
+          <label for="name">Name (Required)</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="photo">Link to Photo/ Image (Required, hopefully somewhat accurate)</label>
+          <input type="text" class="form-control" id="photo">
+        </div>
+        <br>
+        <br>
+        <h2>Survey Questions</h2>
+        <br>
+        <div class="form-group">
+          <label for="q1">I greatly enjoy reading. (select one):</label>
+          <select class="form-control" id="q1">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q2">I enjoy discussing the things I enjoy with others. (select one):</label>
+          <select class="form-control" id="q2">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q3">The Earth is round. (select one):</label>
+          <select class="form-control" id="q3">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q4">If I could put my brain into a robot body and live indefinitely, I would. (select one):</label>
+          <select class="form-control" id="q4">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q5">I enjoy being in the outdoors. (select one):</label>
+          <select class="form-control" id="q5">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q6">I enjoy visiting new places. (select one):</label>
+          <select class="form-control" id="q6">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q7">The best weapon for a zombie apocalypse is a shotgun. (select one):</label>
+          <select class="form-control" id="q7">
+            <option>1 I strongly disagree, and probably have a better weapon to recommend.</option>
+            <option>2</option>
+            <option>3 This is a stupid question. (Or, I wouldn't be fighting zombies.)</option>
+            <option>4</option>
+            <option>5 I strongly agree and enjoy watching them get blown to smithereens.</option>
+          </select>
+          <br>
+          <label for="q8">I have a reasoning behind my previous answer and am willing to discuss it. (select one):</label>
+          <select class="form-control" id="q8">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q9">I enjoy meeting new people. (select one):</label>
+          <select class="form-control" id="q9">
+            <option>1 (Strongly Disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly Agree)</option>
+          </select>
+          <br>
+          <label for="q10">Sweet or salty snacks?:</label>
+          <select class="form-control" id="q10">
+            <option>1 (Salty)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Sweet)</option>
+          </select>
+          <br>
+        </div>
+        <button type="submit" class="btn btn-lg btn-block btn-dropdown submit">Submit</button>
+      </form>  
+    </div> <!--end jumbotron-->
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friend Link</a> | <a href="https://github.com/carmelvineyard/Friend-Finder-App" target="_blank">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>  <!--end container-->
+
+  <!-- Modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!--modal content-->
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div><!--end modal-header-->
+
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="" alt="">
+        </div><!--end modal-body-->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dropdown" data-dismiss="modal">Close</button>          
+        </div><!--end modal-footer-->
+        
+      </div><!--end modal-content-->
+      
+    </div><!--end modal-dialog-->
+    
+  </div> <!--end resultsModal-->
+
+</body>
+</html>
+
+<!-- Javascript code to handle data capture and movement -->
+<script type="text/javascript">
+
+  //Capture form inputs
+
+
+    $(".submit").on("click", function() {
+      console.log("Click managed!");
+      event.preventDefault();
+
+      //Form validation
+      function validateForm() {
+        var isValid = true;
+        $('.form-control').each(function() {
+          if ($(this).val() === '')
+            isValid = false;
+        }); // end .form-control.each
+        
+        console.log("validateForm managed!")
+        return isValid;
+      } // end function validateForm
+
+      // If all required fields are filled, 
+      if (validateForm() == true) {
+
+        //Here we grab the form elements
+        var userData = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+        }
+
+        //quick test
+        console.log(userData);
+        console.log("userData, check!");
+
+        //Grab the URL of the website
+        var currentURL = window.location.origin;
+        console.log("currentURL: " + currentURL + "!");
+        console.log(currentURL + "/api/friends");
+        //Make a POST request to the friends API
+
+        $.post(currentURL + "/api/friends", userData, function(data) {
+          
+          if (data) {
+          console.log(currentURL + "/api/friends");
+          console.log("making post request!");
+          //Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#matchName").text(data.name);
+          $("#matchImg").attr("src", data.photo);
+          // Show the modal with the best match
+          $("#resultsModal").modal('toggle'); 
+          } else {
+            alert("Please fill out all fields before submitting!");
+          }
+        });  // $.post end
+
+      } //end if validateForm == true
+
+      return false;
+
+    }); //end .submit.on"click"
+
+</script>
