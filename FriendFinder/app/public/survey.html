@@ -211,26 +211,28 @@
         //quick test
         console.log(userData);
         console.log("userData, check!");
-
+        //console.log("friendArray: " + friendArray);
         //Grab the URL of the website
         var currentURL = window.location.origin;
         console.log("currentURL: " + currentURL + "!");
         console.log(currentURL + "/api/friends");
         //Make a POST request to the friends API
 
-        $.post(currentURL + "/api/friends", userData, function(data) {
+        $.post("/api/friends", userData, function(data) {
           
-          if (data) {
-          console.log(currentURL + "/api/friends");
-          console.log("making post request!");
+          
+          //console.log(currentURL + "/api/friends");
+          //console.log("making post request!");
+
           //Grab the result from the AJAX post so that the best match's name and photo are displayed.
           $("#matchName").text(data.name);
           $("#matchImg").attr("src", data.photo);
           // Show the modal with the best match
           $("#resultsModal").modal('toggle'); 
-          } else {
+/*
+           else {
             alert("Please fill out all fields before submitting!");
-          }
+          }*/
         });  // $.post end
 
       } //end if validateForm == true
@@ -238,5 +240,22 @@
       return false;
 
     }); //end .submit.on"click"
+/*
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) {
 
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+*/
 </script>
+
+
