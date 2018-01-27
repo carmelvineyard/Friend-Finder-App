@@ -2,7 +2,7 @@
 // LOAD DATA
 // ===============================================================================
 
-var friends = require("../data/friends");
+var friendArray = require("../data/friends");
 
 // ===============================================================================
 // ROUTING
@@ -64,7 +64,7 @@ module.exports = function(app) {
 
    //Finally, save the most recent responses to the array.
    //If this happens earlier, the user would always be the bestMatch. 
-    friends.push(userData); 
+    friendArray.push(userData); 
 
    //Return a JSON with the bestMatch. This will be used by survey.html for the modal.
    	res.json(bestMatch); 
